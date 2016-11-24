@@ -137,15 +137,9 @@
 		reste la commande [git reset hard] mais pou rl'instant je ne la maaitrise pas...
 	</p>
 	<h2>
-		Un outil de versionning local <strong>Et</strong> distant
+		Github le versionning distant
 	</h2>
-	<h3>[git remote]</h3>
-	<p>Faire un remote c'est</p>
-	<ul>
-		<li>Ecrire son code en local</li>
-		<li>Faire les commits et les vérifications</li>
-		<li>Ensuite sauvegarder et éventuellement partager son code sur GitHub ou BitBucklet ou même sur un serveur dédié</li>
-	</ul>
+
 	<h2>
 		Github
 	</h2>
@@ -176,12 +170,28 @@
 		Pour utiliser les GITS il suffit d'aller sur l'URL <a href="https://gist.github.com">https://gist.github.com</a>
 	</p>
 	<h3>
-		L'esprit Github
+		[git clone]
 	</h3>
 	<p>
-
+		De nombreuses librairies son tdéposées sur github, une fois sur la page de la librairie que l'on souhaite utiliser dans son projet, il suffit de chercher le bouton [clone or download] puis de copier l'adresse. De retour dans la console on peut faire [git clone url] puis le transfert se lance. Une fois l'archive chargée elle est automatiquement décompressée puis contrôlée.
 	</p>
-
+	<h3>
+		[git remote]
+	</h3>
+	<p>Faire un remote c'est</p>
+	<ul>
+		<li>Ecrire son code en local</li>
+		<li>Faire les commits et les vérifications</li>
+		<li>Ensuite sauvegarder et éventuellement partager son code sur GitHub ou BitBucklet ou même sur un serveur dédié</li>
+	</ul>
+	<p>
+		Envoyer un dossier local sur Github se fait en trois temps :
+	</p>
+	<ul>
+		<li>[git remote add origin https://github.com/nameUser/nameRepo]</li>
+		<li>[git push -u origine master]</li>
+		<li>Entrer son login et son mot de passe.</li>
+	</ul>
 
 
 	<footer></footer>
