@@ -52,6 +52,8 @@
 	<ul>
 		<li>Se Déplacer dans la hiérarchie des dossir [cd] (ne pas oublier ../ pour se placer à la racine du mac)</li>
 		<li>Créer un dossier [mkdir], créer un fichier[touch]</li>
+		<li>lister les fichier d'un dossier ls</li>
+		<li>cat nomFichier.ext ouvre le fichier dans la console</li>
 	</ul>
 	<p>
 		On le voir rien de bien méchant :), on verra les commandes propre à Git dans un instant
@@ -73,7 +75,82 @@
 		git config --global user.email "mail@laposte.net
 	</p>
 	<h3>
-		GitHub
+		Les principales commandes git
+	</h3>
+	<ul>
+		<li><strong class="brique">git init :</strong> Initialise un projet. Ouvrir la console dans le répertoire puis faire git init crée un dossier .git</li>
+		<li><strong class="brique">git config :</strong> Permet de modifier le nom de l'utilisateur et l'adresse mail associée</li>
+		<li><strong class="brique">git help :</strong></li>
+		<li><strong class="brique">git ls-files :</strong> Liste les fichiers inscrits dans l'index</li>
+		<li><strong class="brique">git add :</strong> Ajoute un fichier dans l'index de suivi de git, avec un . à la place du nom ajoute tous les fichiers<br>
+			A priori, il faut faire un git add fichier.ext avant chaque commit (mais...).
+		<li><strong class="brique">git commit :</strong> Indique que l'on souhaite enregistrer le changement ajouté -m "permet d'indiquer la nature du changement"</li>
+		<li><strong class="brique">git commit -a -m "" :</strong> Demande la prise en compte du comit sur tous les fichiers connus comme modifiés par l'index. Dans ce cas là il n'est pas nécessaire de faire un git add fichier.ext</li>
+		<li><strong class="brique">git status :</strong> Liste les fichiers et leur statut</li>
+		<li><strong class="brique">git log  :</strong> Liste les fichiers et leur statut</li>
+		<li><strong class="brique">git branch :</strong> Suivi d'un nom, crée une nouvelle branche du projet</li>
+		<li><strong class="brique">git checkout :</strong> Permet de se positionner sur un commit donné"</li>
+		<li><strong class="brique">git merge :</strong> Fusionne une branche avec master : git merge brancheAFusionner</li>
+		<li><strong class="brique">git push :</strong> Envoie les commits sur la version distante</li>
+		<li><strong class="brique">git pull :</strong> Récupère la version distante</li>
+	</ul>
+	<h3>
+		Première utilisation
+	</h3>
+	<p class="console">
+		mkdir repertoireProjet<br>
+		cd repertoireProjet<br>
+		git init // initialise un projet local<br>
+		touch readme.txt // crée un fichier<br>
+		git add readme.text // ou git add .<br>
+		git commit -m "ajout d'un nouveau fichier"<br>
+		nouvelle modification du fchier<br>
+		git add readme.txt
+		git commit -m "nouvelle modification sur le fichier"
+	</p>
+
+	<p>
+		Lorsque l'on fait des modifications si l'on veut qu'elles soient prises en compte, il faut ajouter le fichier puis faire un commit<br>
+		On peut aussi faire directement : git commit -a -m "ma modification".<br>
+		Si l'on ajoute pas le fichier et que l'on fait un "git status", git affiche : "Changes no staged for commit".
+		Lorsque l'on fait un commit log les différents commit sont listés<br>
+		La suite alphanumérique  après "commit" est son tidentifiant on l'apelle le <strong>le SHA</strong> sans t<br>
+		On comprend la neccessité de bien rédiger les messages de commit.<br><br>
+		Pour quitter le mode log sur max ou linux, il suffit d'appuyer sur la touche [q]<br>
+	</p>
+	<h3>
+		[git checkout]
+	</h3>
+	<p>
+		Il est possible de revenir à une version antérieure d'un fichier.<br>
+		On fait un [git log] pour afficher les différents commits. on récupère le SHA correspondant à la modification que l'on souhaite revoir.<br>
+		Puis [git checkout SHA] ramène tous les fichiers à la version correspondant à la date du SHA.<br>
+		On vérifie son/ou ses fichiers.<br>
+		S'il n'y a pas d'erreur on revient sur le dernier commit par un [git checkout master].<br>
+		Et on réitère jusqu'à ce que l'on trouve la version bugguée.<br>
+	</p>
+	<h3>
+		Supprimer un commit ?
+	</h3>
+	<p>
+		On ne peut pas vraiment supprimer un commit, on peut juste fiare [git revert SHAcommit] qui fait l'inverse du précédent... Pas très pratique.<br>
+		reste la commande [git reset hard] mais pou rl'instant je ne la maaitrise pas...
+	</p>
+	<h2>
+		Un outil de versionning local <strong>Et</strong> distant
+	</h2>
+	<h3>[git remote]</h3>
+	<p>Faire un remote c'est</p>
+	<ul>
+		<li>Ecrire son code en local</li>
+		<li>Faire les commits et les vérifications</li>
+		<li>Ensuite sauvegarder et éventuellement partager son code sur GitHub ou BitBucklet ou même sur un serveur dédié</li>
+	</ul>
+	<h2>
+		Github
+	</h2>
+	<h3>
+		Le leader mondial du repositery open source
 	</h3>
 	<p>
 		Github est avant toute chose un réseau siocial pas du tout réservé aux développeur. Ce peut-être un endroit de partage de code, bien sûr, mais aussi de photos, de maquettes ...<br>
@@ -81,37 +158,29 @@
 		Il faut savoir que GitHub est réseau social qui vous protège et ne charche pas à vous spolier droits d'auteur comme le font certains ...<br>
 		Lorsque vous créez un compte, Github vous propose un compte illimié ouvert, ou compte privé (7$/mois).
 	</p>
-	<h3>
-		Les principales commandes git
-	</h3>
-	<ul>
-		<li><strong class="brique">git init</strong>Initialise un projet. Ouvrir la console dans le répertoire puis faire git init crée un dossier .git</li>
-		<li><strong class="brique">git config</strong>permet de modifier le nom de l'utilisateur et l'adresse mail associée</li>
-		<li><strong class="brique">git help</strong></li>
-		<li><strong class="brique">git status</strong>liste les fichiers et leur statut</li>
-		<li><strong class="brique">git log</strong>liste les fichiers et leur statut</li>
-		<li><strong class="brique">git add</strong>ajoute un fichier dans l'index de suivi de git, avec un . à la place du nom ajoute tous les fichiers</li>
-		<li><strong class="brique">git commit</strong>indique que l'on vient de faire un changement que l'on souhaite enregistrer -m "permet d'indiquer la nature du changement"</li>
-		<li><strong class="brique">git branch</strong>suivi d'un nom, crée une nouvelle branche du projet</li>
-		<li><strong class="brique">git checkout</strong>permet de se déplacer d'une branche à l'autre "git checkout autreBranche"</li>
-		<li><strong class="brique">git merge</strong>fusionne une branche avec master : git merge brancheAFusionner</li>
-		<li><strong class="brique">git push</strong>Envoie les commits sur la version distante</li>
-		<li><strong class="brique">git pull</strong>Récupère la version distante</li>
-	</ul>
-	<h3>
-		Première utilisation
-	</h3>
-	<p class="console">
-		cd repertoire<br>
-		mkdir repertoireProjet<br>
-		git init // initialise un projet local<br>
-		touch readme.txt<br>
-		git add readme.text // ou git add .<br>
-		git commit -m "ajout d'un nouveau fichier"<br>
+	<p>
+		Github ne sert donc pas qu'à déposer une copie des vos codes en un endroit sûr. Dans la version gratuite, vos codes sont "open source", ils sont déposés pour être partagés, ce qui signifie aussi que vous pourrez aussi récupérer des morceaux de code.
 	</p>
+	<p>
+		D'autre part en navigant sur le compte de vos librairies vavorites, vous pourrez déposer des issues et espérer trouver réponse.
+	</p>
+	<p>
+		Et vos pourrez proposer des Pull Request pour proposer des solutions à certains problèmes.
+	</p>
+	<p>
+		Sur github, on peut aussi déposer du code dans des [GITS].<br>
+		les Gits proposent une manière élégante de partager des fichiers, du code ..., les GITS peuvent être publics ou privé.<br>
+		Publics les GITS sont accessible par un moteur de recherche<br>
+		Privés, ils ne son taccessibles qu' à ceux qui connaissent leur URL.<br>
+		Les GITS peuvent être clonés, téléchargés, et même incorporés s'ils supportent le javascript.<br>
+		Pour utiliser les GITS il suffit d'aller sur l'URL <a href="https://gist.github.com">https://gist.github.com</a>
+	</p>
+	<h3>
+		L'esprit Github
+	</h3>
+	<p>
 
-
-
+	</p>
 
 
 
@@ -119,5 +188,3 @@
 </div>
 
 <?php include("footer.php") ?>
-
-
