@@ -263,9 +263,34 @@
 		[git blame]
 	</h3>
 	<p>
-		Lorsque l'on travaille à plusieurs su run même sujet, il peut être utile de contacter la personne qui a fait une modification sur laquelle on a besoin de précisions.
+		Lorsque l'on travaille à plusieurs sur un même sujet, il peut-être utile de contacter la personne qui a fait une modification sur laquelle on a besoin de précisions.
+		pour cela on utilise la commande [git blame] mais chez moi le fichier en entier s'affiche face à la liste des opérations listées. <br>
+		Du coup j'abandonne ...
 	</p>
-
+	<h3>
+		git show SHA
+	</h3>
+	<p>
+		Affiche les différences apportées par ce commit... Super !
+	</p>
+	<h3>
+		.gitignore
+	</h3>
+	<p>
+		il n'est pas conseillé d'envoyer tous les fichiers d'un projet sur github. les fichiers de configuration sont particulièrement visés dans cet avertissement.<br>
+		Nous avons à notre disposition le fichier .gitignore (qui porte bien son nom) qui liste les fichiers que l'on souhaite préserver.<br>
+		Les fichiers sont listés les uns en dessous des autres et il est bien sûr possible d'utiliser le caractère joquer *.<br>
+		ex. sites/*/settings*.php<br>
+		sites/*/services*.yml<br>
+		*/*.settings*.php
+	</p>
+	<h3>
+		[git stash]
+	</h3>
+	<p>
+		Imaginons qu'au cours d'un travail vous soyez interrompu. Si votre travail n'est pas pret à être "commité", il reste une solution pour s'assurer que les dernières modif soient prisent en compte par Git sans pour autant en faire un commit.<br>
+		[git stash] réalise cette prouesse pour vous. Lorsque vous serez de retour vou spourrez faire un [git stash pop] pour intégrer les nouveautés prètes à être "commités".<br> on peut aussi faire un git [git stash apply]
+	</p>
 	<h3>
 		les adresses utiles
 	</h3>
