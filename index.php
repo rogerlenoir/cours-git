@@ -70,10 +70,10 @@
 	<p>
 		Une fois l'installation finalisée, ouvrez la console et paramétrez le compte général qui vous servira sur github
 	</p>
-	<p class="console">
-		git config --global user.name "votreNom"<br>
-		git config --global user.email "mail@laposte.net
-	</p>
+	<ul class="console">
+		<li>git config --global user.name "votreNom"</li>
+		<li>git config --global user.email "mail@laposte.net</li>
+	</ul>
 	<h3>
 		Les principales commandes git
 	</h3>
@@ -100,23 +100,24 @@
 	<h3>
 		Première utilisation
 	</h3>
-	<p class="console">
-		cd dossier racine (www)
-		mkdir repertoireProjet<br>
-		cd repertoireProjet<br>
-		git init // initialise un projet local<br>
-		touch readme.txt // crée un fichier<br>
-		git status (indique que le fichier n'est pas ajouté)
-		git add readme.text // ou git add .<br>
-		git commit -m "ajout d'un nouveau fichier"<br>
-		nouvelle modification du fichier<br>
-		git add readme.txt
-		git commit -m "nouvelle modification sur le fichier"
-		ou git commit -am "nouvelle modification sur le fichier"
-		git log permet de "voir" les commits
-		git checkout SHA permet de revenir sur un commit
-
-	</p>
+	<ul class="console">
+		<li>[cd] dossier racine (www)</li>
+		<li>[mkdir] repertoireProjet</li>
+		<li>[cd ]repertoireProjet</li>
+		<li>[git init] // initialise un projet local</li>
+		<li>[touch fichier.ext] // crée un fichier</li>
+		<li>[git status] -> le nom du fichier en rouge + "untracked files"</li>
+		<li>[git add fichier.ext] // ou git add .</li>
+		<li>[git status] -> le nom du fichier en vert + "changes to be committed"</li>
+		<li>[git commit -m "description de la modification"]</li>
+		<li>// nouvelle modification</li>
+		<li>[git status]-> le nom du fichier est a nouveau affiché en rouge + "changes not staged for committed"</li>
+		<li>[git add fichier.ext] puis [git commit -m "nouvelle modification sur le fichier"]</li>
+		<li>ou [git commit -am "nouvelle modification sur le fichier"]</li>
+		<li>[git status] -> "nothing to commit, working tree clean"</li>
+		<li>[git log] permet de "voir" les commits</li>
+		<li>[git checkout SHA ]permet de revenir sur un commit</li>
+	</ul>
 
 	<p>
 		Lorsque l'on fait des modifications si l'on veut qu'elles soient prises en compte, il faut ajouter le fichier puis faire un commit<br>
@@ -232,10 +233,47 @@
 		<strong>[git merge maBranche]</strong><br>
 		Bien sûr on peut fusionner master dans maBranche, il suffit de se positionner dans maBranche et ...<br>
 	</p>
+	<h3>
+		Résolution des conflits
+	</h3>
+	<p>
+		Lors de la fusion de deux branches, si deux lignes d'un même fichier sont différentes, [git merge] renvoie CONFLICT et modifie le fichier de façon à mettre en évidence le problème.
+	</p>
+	<pre>
+		ATTENTION pour des pb de html les chevrons ont été remplacés par de tirets la ligne ====== est bien reproduite.
+		--------- HEAD
+		alert ("hello les amis");
+		=======
+		alert ("hello world");
+		--------- maBranche
+	</pre>
+	<p>
+		Il faut résoudre le conflit directement dans le fichier affecté par les modifs de git, puis enregistrer les modifications.<br>
+		et finir par un [git commit -am "resolution du conflit"]
+	</p>
+	<p>
+		il existe des outils permettant de résoudre les conflits :<br>
+		vimdiff, meld, opendiff, kdiff3, tkdiff, xxdiff, tortoisemerge, gvimdiff, diffuse, ecmerge, p4merge, araxis, emerge.<br>
+		Pour lancer l'un de ces outils externes de merge avec la commande [git mergetool vimdiff]
+	</p>
+	<h2>
+		Un peu plus loin
+	</h2>
+	<h3>
+		[git blame]
+	</h3>
+	<p>
+		Lorsque l'on travaille à plusieurs su run même sujet, il peut être utile de contacter la personne qui a fait une modification sur laquelle on a besoin de précisions.
+	</p>
 
-
-
-
+	<h3>
+		les adresses utiles
+	</h3>
+	<ul>
+		<li>Là où j'ai tout appris : https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github</li>
+		<li>le plus complet : https://git-scm.com/book/fr/v2</li>
+		<li>Le résumé le plus intelligent : http://rogerdudler.github.io/git-guide/index.fr.html</li>
+	</ul>
 	<footer></footer>
 </div>
 
