@@ -24,6 +24,7 @@
 			echo '<div class="bread"><a href = "http://php">PHP></a> > '.substr($uri, 1, -4).'</div>';
 		}
 	?>
+	<p>Ce résumé est fortement inspiré de l'excélent cours de Marc G Gauthier mis en ligne sur <a href="https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github">https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github</a> et d'autres infos glanées ici ou là (voir en fin de fichier)</p>
 
 	<h1>Introduction Git</h1>
 
@@ -288,15 +289,33 @@
 		[git stash]
 	</h3>
 	<p>
-		Imaginons qu'au cours d'un travail vous soyez interrompu. Si votre travail n'est pas pret à être "commité", il reste une solution pour s'assurer que les dernières modif soient prisent en compte par Git sans pour autant en faire un commit.<br>
-		[git stash] réalise cette prouesse pour vous. Lorsque vous serez de retour vou spourrez faire un [git stash pop] pour intégrer les nouveautés prètes à être "commités".<br> on peut aussi faire un git [git stash apply]
+		Imaginons qu'au cours d'un travail vous soyez interrompu. Si votre codel n'est pas pret à être "commité", il reste une solution pour s'assurer que les dernières modifications soient prises en compte par Git sans pour autant en faire un commit.<br>
+		[git stash] réalise cette prouesse pour vous. <br>
+		Lorsque vous serez de retour vous pourrez faire un [git stash pop] pour intégrer les nouveautés prètes à être "commités".<br>
+		On peut aussi faire un git [git stash apply] qui va garder en mémoire ce qui vioent d'être rajouté au cas oo l'on veuille revenir dessus.
+		<cite>Another way to look at it: git stash pop is git stash apply && git stash drop.</cite>
+	</p>
+	<h2>
+		Participer à un projet open source
+	</h2>
+	<h3>Créer un fork</h3>
+	<p>
+		Les Forks ont à voir avec la participation à un projet autre que le votre.
+		Faire un fork, c'est faire la copie d'un repo vers votre compte dans le but d'y apporter des modifications et de les soumettre aux personnes qui gèrent ce projet.<br>
+		Avant d'envisager de travailler sur un projet, il est important de lire le readme dans lequel on va trouver les indications qui fixent les modalités de la contribution.<br>
+		Une fois le fork dans importé, on fait un clone du fork vers son propre espace de travail<br>
+		Les modifications se font bien évidemment sur une nouvelle branche qu'il faut créer.<br>
+		Les modifications terminées, la nouvelle branche peut être "pushée" vers Github [git push origin nouvelleBranche]<br>
+		Puis, à partir de github on fait <strong>un pull request</strong>, une proposition d'insertion de la modification destinées aux responsables du projet.<br>
+		Il faut bien remplir le formulaire et il est inutile de dire que tout cela ce fait avec politesse.
 	</p>
 	<h3>
 		les adresses utiles
 	</h3>
 	<ul>
-		<li>Là où j'ai tout appris : https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github</li>
-		<li>le plus complet : https://git-scm.com/book/fr/v2</li>
+		<li>Ma plus grande référence: https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github</li>
+		<li>Le plus complet : https://git-scm.com/book/fr/v2</li>
+		<li>Avec une page qui explique bien des choses : https://git-scm.com/book/fr/v2/Utilitaires-Git-Reset-d%C3%A9mystifi%C3%A9</li>
 		<li>Le résumé le plus intelligent : http://rogerdudler.github.io/git-guide/index.fr.html</li>
 	</ul>
 	<footer></footer>
